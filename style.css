@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(253, 244, 230);
+    height: 100vh;
+    font-family: Montserrat, Arial, Helvetica, sans-serif ;
+}
+
+.header_logo{
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    background: rgb(32, 146, 83);
+    }
+
+nav ul {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+    height: 2rem;
+    margin-top: 1rem;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 25px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a ::after {
+    background: bisque;
+    width: 100%;
+    height: 2px;
+    content: "";
+    transform: translateY(12px);
+}
+nav a:hover ::after{
+    display: block;
+}
+
+.grid_container{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: 2fr 2fr;
+    justify-content: center;
+    grid-template-areas: "main_part main_part main_part"
+                          "card1 card2 card3";
+}
+
+
+.main_part {
+    background: url(./img/image-generee-garden-min.jpg)fixed center/cover;
+    grid-area: main_part;   
+}
+
+#fadeIn {
+    color: whitesmoke;
+    margin: 50px;
+    opacity: 0;
+    animation: fadeIn 6s forwards; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+  to {opacity: 1}
+}
+#fadeIn>h1, h2, p{
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px black;
+   
+}
+#fadeIn p {
+    font-size: 1.5rem;    
+}
+
+#fadeIn button{
+    margin-top: 20px;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 700; 
+    letter-spacing: 2px;
+}
+#fadeIn button:hover{
+    background: rgb(253, 244, 230);
+    border : 1px solid rgb(32, 146, 83);
+    color: rgb(32, 146, 83);
+}
+
+.card {
+    margin: 5% 10%;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    border : 1px solid rgb(91, 159, 140);
+    box-shadow: 0px 10px 13px -7px #000000, 1px 14px 20px 11px rgba(102,102,102,0.29);
+
+    display: grid;
+    grid-template-rows: 2fr 0.5fr 0.5fr 0.5fr;
+    grid-template-areas: "img"
+                          "title"
+                          "parag"
+                          "button";
+    max-height: 350px;
+
+}
+.divImg {
+    grid-area: img;
+    border-radius: 10px;
+    box-shadow: 0px 10px 13px -7px #cfc487, 1px 14px 20px 11px rgba(226, 217, 172, 0.29);
+}
+
+.card > h3{
+    grid-area: title;
+    margin: 10px 2px 0px 5px;
+    color: #2b2a2a;
+}
+
+.card> p{
+    grid-area: parag;
+    margin: 5px;
+    color: #2b2a2a;
+    text-shadow: none;
+}
+.card > button{
+    grid-area: button;
+    border-radius: 10px;
+    border: 1px solid rgb(32, 146, 83);;
+    padding: 5px;
+    background: rgb(32, 146, 83);
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-weight: 700; 
+    letter-spacing: 2px;
+    text-shadow: none;
+}
+
+.card button:hover{
+    background: rgb(253, 244, 230);
+    border : 1px solid rgb(32, 146, 83);
+    color: rgb(32, 146, 83);
+}
+.card1{
+    grid-area: card1;
+}
+
+.card1 >.divImg{
+    background-image: url(./img/gardener-min.jpg) ;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card2 {
+    grid-area: card2;
+       }
+
+.card2 >.divImg {
+    background-image: url(./img/gardner-femme-s-occupant-plantes-dans-serre-min.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.card3 {
+    grid-area: card3;
+}
+.card3 >.divImg {
+    background-image: url(./img/usine-peperomia-pasteque-faux-dans-pot-gris.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(32, 146, 83);
+    color: whitesmoke;
+    padding: 20px;
+}
+.footer_container> p {
+    text-transform: uppercase;
+    font-weight: 700;
+}
